@@ -1,20 +1,23 @@
-# Task API (To-Do List CRUD API)
+# Task API (SQLite Database Edition)
 
-A lightweight RESTful API built with Python and FastAPI for managing a to-do list in memory.
+A RESTful CRUD API built with Python and FastAPI for managing a to-do list, now backed by a persistent SQLite database.
 
-## How to Install and Run
+## Database Documentation
 
-```bash
-# 1. Clone the repository
-git clone <YOUR-GITHUB-REPO-URL>
-cd task-api
+### Why SQLite Was Chosen
+- **Zero Configuration:** SQLite requires no separate server installation, daemon processes, or user authentication setup.
+- **Portability:** The entire database resides in a single lightweight file (`tasks.db`), making it ideal for fast local development and lightweight applications.
+- **Simplicity:** It provides full SQL capability and standard transaction support without infrastructure overhead.
 
-# 2. Set up virtual environment
-python3 -m venv venv
-source venv/bin/activate    # Windows: venv\Scripts\activate
+### Database Location & Auto-Initialization
+- **File Location:** `./tasks.db` (root directory of the project)
+- **Automatic Setup:** When the server starts up, it automatically creates the `tasks` table if it does not exist and populates three default example tasks if the database is empty.
 
-# 3. Install dependencies
-pip install fastapi uvicorn
+---
 
-# 4. Start the server
-uvicorn main:app --reload --port 8000
+## How to Start the Project
+
+1. **Clone the repository:**
+   ```bash
+   git clone <YOUR-GITHUB-REPO-URL>
+   cd task-api
