@@ -43,7 +43,7 @@ def init_db():
 
     if count == 0:
         seed_tasks = [
-            ("Buy groceries", False),
+            ("Buy grocery", False),
             ("Read a book", True),
             ("Build a CRUD API with SQL", False),
         ]
